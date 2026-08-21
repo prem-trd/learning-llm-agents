@@ -1,0 +1,26 @@
+Nimbus Files — Security & Compliance
+
+All files stored on Nimbus Files are encrypted at rest using AES-256, and all
+data in transit between your device and our servers is encrypted using
+TLS 1.3. Encryption keys are managed by our infrastructure provider and
+rotated automatically every 90 days.
+
+Nimbus Files is SOC 2 Type II certified. Our latest audit report is available
+to Business plan customers upon request through the admin console.
+
+We are GDPR compliant for customers in the European Union. Business plan
+customers can request a Data Processing Addendum (DPA) from their account
+manager. We do not sell customer data to third parties under any
+circumstances.
+
+Two-factor authentication (2FA) is available on all plans and can be enabled
+from account security settings. We strongly recommend enabling 2FA,
+particularly for Business plan admin accounts, since admins can access every
+team member's files.
+
+Business plan customers can additionally enforce SSO via SAML 2.0, restrict
+login to specific IP ranges, and set a mandatory session timeout for all
+users on the account.
+
+Nimbus Files does not currently support HIPAA-compliant storage and should
+not be used to store protected health information.

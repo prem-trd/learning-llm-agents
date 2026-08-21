@@ -1,0 +1,21 @@
+Nimbus Files — Pricing Plans
+
+Nimbus Files offers three subscription tiers: Free, Pro, and Business.
+
+The Free plan includes 5 GB of storage, file sharing with view-only links, and
+support for files up to 250 MB in size. It is intended for individuals trying
+out the product and does not include version history.
+
+The Pro plan costs $9 per month (or $90 per year, a 17% discount) and includes
+2 TB of storage, unlimited file size, 30 days of version history, and the
+ability to share files with edit permissions. Pro is our most popular plan
+for freelancers and small teams.
+
+The Business plan costs $22 per user per month and includes unlimited
+storage, 180 days of version history, single sign-on (SSO), an admin console
+for managing team members, and priority support. Business requires a minimum
+of 3 seats.
+
+All plans can be upgraded, downgraded, or cancelled at any time from the
+account settings page. Downgrading takes effect at the end of the current
+billing cycle; there is no partial credit for unused time.

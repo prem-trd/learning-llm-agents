@@ -1,0 +1,22 @@
+Nimbus Files — Support Channels & Hours
+
+Free plan customers can reach support through our community forum and the
+help center at help.nimbusfiles.example. Response times on the forum are
+best-effort and not guaranteed.
+
+Pro plan customers get email support at support@nimbusfiles.example, with a
+target first response time of one business day. Support is available Monday
+through Friday, 9 AM to 6 PM Eastern Time, excluding US federal holidays.
+
+Business plan customers get priority email and live chat support, available
+Monday through Friday, 6 AM to 10 PM Eastern Time. Business customers with
+10 or more seats are assigned a dedicated account manager and can request a
+30-minute onboarding call.
+
+We do not currently offer 24/7 phone support on any plan. Critical outages
+affecting all customers are posted to status.nimbusfiles.example and updated
+at least every 30 minutes until resolved.
+
+For billing questions specifically, use billing@nimbusfiles.example rather
+than the general support address — billing requests are routed to a
+different team and get a faster response there.

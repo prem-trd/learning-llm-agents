@@ -1,0 +1,33 @@
+{
+  "name": "learning-llm-agents",
+  "version": "1.0.0",
+  "description": "Hands-on curriculum: LLM basics -> Tools -> Agent Loop -> RAG -> Memory -> Evaluation -> Production",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "l1:basic": "node level-1-llm-basics/01-basic-prompt.js",
+    "l1:tokens": "node level-1-llm-basics/02-tokens-and-context.js",
+    "l1:structured": "node level-1-llm-basics/03-structured-output.js",
+    "l2:single": "node level-2-tools/01-single-tool-call.js",
+    "l2:real-api": "node level-2-tools/02-real-api-tool.js",
+    "l2:multi": "node level-2-tools/03-multiple-tools-and-choice.js",
+    "l3:research": "node level-3-agent-loop/01-multi-step-research-agent.js",
+    "l3:guardrails": "node level-3-agent-loop/02-guardrails-and-recovery.js",
+    "l3:trace": "node level-3-agent-loop/03-trace-and-cost.js",
+    "l4:chunking": "node level-4-rag/01-chunking.js",
+    "l4:retrieval": "node level-4-rag/02-retrieval-tfidf.js",
+    "l4:rag": "node level-4-rag/03-full-rag-pipeline.js",
+    "l4:agentic-rag": "node level-4-rag/04-rag-as-agent-tool.js",
+    "l5:persist": "node level-5-memory/01-save-and-load-conversation.js",
+    "l5:facts": "node level-5-memory/02-extract-and-store-facts.js",
+    "l5:memory-tool": "node level-5-memory/03-memory-as-a-tool.js",
+    "l6:rules": "node level-6-evaluation/01-rule-based-eval.js",
+    "l6:judge": "node level-6-evaluation/02-llm-as-judge.js",
+    "l6:regression": "node level-6-evaluation/03-regression-testing.js",
+    "l6:rag-eval": "node level-6-evaluation/04-eval-the-rag-pipeline.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.0",
+    "openai": "^7.5.0"
+  }
+}

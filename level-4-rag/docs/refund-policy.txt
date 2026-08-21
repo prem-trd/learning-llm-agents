@@ -1,0 +1,22 @@
+Nimbus Files — Refund Policy
+
+We offer a 14-day money-back guarantee on all new Pro and Business
+subscriptions. If you are not satisfied within the first 14 days after your
+initial purchase, contact support and we will issue a full refund to your
+original payment method. Refunds are typically processed within 5 to 7
+business days.
+
+Renewals are not covered by the 14-day guarantee. If your subscription
+auto-renews and you did not intend to renew, you have 72 hours from the
+renewal charge to request a refund of that specific renewal payment.
+
+Refunds are not available for the Business plan once any team member has
+used a Business-only feature (such as SSO configuration) during the current
+billing period, since that usage cannot be reversed.
+
+To request a refund, email billing@nimbusfiles.example with your account
+email and the reason for the request. We do not require you to state a
+reason, but it helps us improve the product.
+
+Downgrading to the Free plan does not trigger a refund for the remaining
+time on a paid plan; see the Pricing document for how downgrades work.

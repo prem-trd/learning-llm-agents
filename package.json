@@ -24,10 +24,15 @@
     "l6:rules": "node level-6-evaluation/01-rule-based-eval.js",
     "l6:judge": "node level-6-evaluation/02-llm-as-judge.js",
     "l6:regression": "node level-6-evaluation/03-regression-testing.js",
-    "l6:rag-eval": "node level-6-evaluation/04-eval-the-rag-pipeline.js"
+    "l6:rag-eval": "node level-6-evaluation/04-eval-the-rag-pipeline.js",
+    "l7:security": "node level-7-production/01-security-basics.js",
+    "l7:monitoring": "node level-7-production/02-monitoring-and-logging.js",
+    "l7:multiuser": "node level-7-production/03-multi-user-and-state.js",
+    "l7:full": "node level-7-production/04-full-production-agent.js"
   },
   "dependencies": {
     "dotenv": "^17.0.0",
+    "express": "^5.2.1",
     "openai": "^7.5.0"
   }
 }

@@ -128,15 +128,17 @@ async function runToolLoop(userMessage) {
 async function main() {
   console.log("--- Query 1 ---");
   console.log(
-    await runToolLoop("What's the weather like in Reykjavik right now?"),
-  );
-
-  console.log("\n--- Query 2: something requiring TWO tool calls ---");
-  console.log(
     await runToolLoop(
-      "Compare the current weather in Cairo and Oslo — which one is warmer?",
+      "What's the weather like in CT-6,7&8,ACTL,Mundra, , DM-061626 right now?",
     ),
   );
+
+  // console.log("\n--- Query 2: something requiring TWO tool calls ---");
+  // console.log(
+  //   await runToolLoop(
+  //     "Compare the current weather in Cairo and Oslo — which one is warmer?",
+  //   ),
+  // );
 }
 
 main().catch((err) => {

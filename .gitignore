@@ -3,3 +3,4 @@ node_modules/
 dist/
 *.log
 level-5-memory/data/*.json
+level-7-production/data/users/*.json

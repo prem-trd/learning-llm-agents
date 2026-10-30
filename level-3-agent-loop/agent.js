@@ -27,6 +27,10 @@
  * @param {object[]} opts.tools            - tool defs: {type:"function", function:{name, description, parameters}}
  * @param {Record<string, Function>} opts.toolImplementations - name -> async (input) => output
  * @param {string} opts.userMessage
+ * @param {object[]} [opts.priorMessages]  - an existing conversation to continue (Level 7:
+ *                                            load this from per-user storage instead of
+ *                                            starting fresh every call — `system` is ignored
+ *                                            when this is provided, since it's already in there)
  * @param {number} [opts.maxIterations]    - safety cap on tool-use rounds
  * @param {boolean} [opts.verbose]         - print each step as it happens
  */
@@ -37,11 +41,12 @@ export async function runAgent({
   tools,
   toolImplementations,
   userMessage,
+  priorMessages,
   maxIterations = 6,
   verbose = true,
 }) {
-  const messages = [];
-  if (system) messages.push({ role: "system", content: system });
+  const messages = priorMessages ? [...priorMessages] : [];
+  if (!priorMessages && system) messages.push({ role: "system", content: system });
   messages.push({ role: "user", content: userMessage });
 
   // We track every step for two reasons: (1) so you can print/inspect the

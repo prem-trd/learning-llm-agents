@@ -158,9 +158,63 @@ npm run l6:rag-eval     # evaluating Level 4's RAG pipeline: retrieval quality a
   grounded?) as two separate numbers — because a bad RAG answer can come
   from either layer, and they need different fixes.
 
-## Coming next
+## Level 7 — Production (security, monitoring, cloud, multi-user)
 
-Level 7 (Production) covers security, monitoring, deployment, and multi-user
-concerns — the last mile between "this works when I run it" and "this is a
-real service other people rely on." Once you're comfortable with Level 5 and
-6, say so and we'll build Level 7 — the final level.
+The final level. Every exercise here is a real Express server (not a
+script that runs once and exits) — start it, leave it running, hit it with
+`curl` from a second terminal, `Ctrl+C` to stop it.
+
+```bash
+npm run l7:security     # app-level auth, input validation, rate limiting, prompt-injection defense
+npm run l7:monitoring   # structured request logging, /health, /metrics, centralized error handling
+npm run l7:multiuser    # per-user conversation isolation + a per-user lock against race conditions
+npm run l7:full         # the capstone: Level 3's agent + Level 4's RAG tool + Level 5-style memory,
+                         # per user, behind everything from Exercises 1-3 — this is a real agent API
+```
+
+- **`l7:security`** — an app-level `x-api-key` (a secret YOU issue, completely
+  separate from your `OLLAMA_API_KEY` — never confuse "authenticates me to
+  Ollama" with "authenticates my callers to my server"), input validation
+  before a request ever reaches the model, an in-memory rate limiter, and a
+  worked example of the prompt-injection anti-pattern (letting a client
+  supply system-prompt content) shown but never wired up.
+- **`l7:monitoring`** — one structured JSON log line per request (`requestId`,
+  latency, status), a `/health` endpoint (what a load balancer or deploy
+  platform pings), a `/metrics` endpoint (aggregate request count, error
+  rate, average latency, token spend), and centralized Express error-handling
+  middleware so no route can accidentally leak a stack trace to a client.
+- **`l7:multiuser`** — Level 5's memory used one shared file, which is wrong
+  the moment more than one person can hit your server. This gives every
+  `x-user-id` its own file and its own lock (so two concurrent requests from
+  the *same* user can't race and corrupt each other's history), and is
+  explicit about why that still isn't real production storage once you run
+  more than one server process.
+- **`l7:full`** — the capstone. `POST /chat` runs the actual Level 3 agent
+  loop with a `search_knowledge_base` tool over Level 4's Nimbus Files docs,
+  persists each user's conversation the way Level 5 did — but per-user, like
+  Exercise 3 — and sits behind every security/monitoring middleware from
+  Exercises 1-2. Ask it something, then ask a follow-up in the same
+  `x-user-id` session: it resolves the follow-up from conversation memory
+  *and* runs a fresh RAG search for the new fact it needs, in the same turn.
+
+Every exercise is upfront in its own closing message about the specific gap
+between "this shape is correct" and "this is actually deployed": in-memory
+rate limits and metrics don't survive a restart or scale past one process;
+per-user JSON files aren't a real database. That gap is infrastructure, not
+application logic — the code here is the part that doesn't change when you
+close it.
+
+## You've completed the curriculum
+
+LLM basics → Tools → Agent Loop → RAG → Memory → Evaluation → Production.
+Everything in `level-7-production/04-full-production-agent.js` is built from
+pieces every earlier level taught, wired together behind a real REST API —
+which is what "learn to build AI agents" actually cash-values out to.
+
+Natural next steps from here, if you want them: swap `l7:full`'s in-memory
+rate limiter/metrics and per-user JSON files for real infrastructure (Redis,
+Postgres/SQLite); point Level 6's regression-test pattern at the `/chat`
+endpoint itself instead of calling the model directly, so you have a real
+pre-deploy check; or switch `.env` to local Ollama (see Setup above) and
+re-run everything to see how a smaller model changes the reliability notes
+you've hit along the way (structured output, tool calling, RAG groundedness).

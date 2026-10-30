@@ -16,7 +16,12 @@
  */
 import path from "path";
 import { fileURLToPath } from "url";
-import { loadDocuments, chunkAllDocuments, buildIndex, search } from "./rag-utils.js";
+import {
+  loadDocuments,
+  chunkAllDocuments,
+  buildIndex,
+  search,
+} from "./rag-utils.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DOCS_DIR = path.join(__dirname, "docs");
@@ -24,12 +29,18 @@ const DOCS_DIR = path.join(__dirname, "docs");
 function printResults(query, results) {
   console.log(`\nQuery: "${query}"`);
   if (results.length === 0) {
-    console.log("  (no chunks scored above zero — nothing in the corpus matches this)");
+    console.log(
+      "  (no chunks scored above zero — nothing in the corpus matches this)",
+    );
     return;
   }
   for (const { chunk, score } of results) {
-    console.log(`  score=${score.toFixed(3)}  [${chunk.source} #${chunk.chunkIndex}]`);
-    console.log(`    "${chunk.text.slice(0, 100)}${chunk.text.length > 100 ? "..." : ""}"`);
+    console.log(
+      `  score=${score.toFixed(3)}  [${chunk.source} #${chunk.chunkIndex}]`,
+    );
+    console.log(
+      `    "${chunk.text.slice(0, 100)}${chunk.text.length > 100 ? "..." : ""}"`,
+    );
   }
 }
 
@@ -61,7 +72,7 @@ function main() {
       "behavior for a RAG system: if there's nothing relevant to retrieve,\n" +
       "don't hand the model made-up context and hope it doesn't use it.\n" +
       "Exercise 3 builds on exactly this to prevent the model from\n" +
-      "hallucinating an answer when the knowledge base has nothing to say."
+      "hallucinating an answer when the knowledge base has nothing to say.",
   );
 }
 
